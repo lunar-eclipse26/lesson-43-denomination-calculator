@@ -1,0 +1,18 @@
+from tkinter import *
+def check():
+    p=password.get()
+    l=len(p)
+    if l<=5:result.config(text="PATHETIC",fg="red")
+    elif l<=8:result.config(text="MEH STILL BAD",fg="yellow")
+    elif l<=12:result.config(text="PASSABLE",fg="lightgreen")
+    else:result.config(text="UR GOOD",fg="green")
+window=Tk()
+window.title("password security checker")
+window.geometry("400x400")
+Label(window,text="Enter Password").pack(pady=20)
+password=Entry(window,show="*")
+password.pack()
+Button(window,text="Check Strength",command=check).pack(pady=20)
+result=Label(window,text="")
+result.pack(pady=20)
+window.mainloop()
